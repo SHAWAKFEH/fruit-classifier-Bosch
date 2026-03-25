@@ -2,65 +2,99 @@
 
 # 
 
-# \## Problem Statement
-
-# A multi-class classification project to distinguish between \*\*apples\*\*, \*\*bananas\*\*, and \*\*grapes\*\* using color, size, and weight as input features.
+# \*\*Goal:\*\* Multi-class classification to distinguish apples, bananas, and grapes using color, size, and weight.
 
 # 
 
-# \## Dataset
-
-# \- 200 records, 4 columns: `fruit\_type`, `color`, `size`, `weight`
-
-# \- Target label: `fruit\_type`
+# \---
 
 # 
 
-# \## Preprocessing
+# \## 📁 Repository Structure
+
+# 
+
+# | File | Description |
+
+# |---|---|
+
+# | `BOSCH.ipynb` | Full Jupyter Notebook (preprocessing + models) |
+
+# | `fruit\_classifier\_documentation.pdf` | Complete project documentation |
+
+# | `fruit\_data.xlsx` | Raw dataset (200 records) |
+
+# 
+
+# \---
+
+# 
+
+# \## ⚙️ Preprocessing Steps
+
+# 
 
 # \- Removed missing values
 
-# \- Lowercased and stripped whitespace from text columns
+# \- Lowercased and stripped whitespace
 
-# \- Removed stray digits (e.g. `Yellow1` → `yellow`)
+# \- Removed stray digits from text columns (`Yellow1` → `yellow`)
 
-# \- Fuzzy matching to fix typos (e.g. `largee` → `large`)
+# \- Fuzzy matching for typo correction (`largee` → `large`)
 
-# \- Per-fruit IQR outlier removal on weight column
+# \- Per-fruit IQR outlier removal on weight
 
 # \- Label encoding for categorical features
 
 # 
 
-# \## Models \& Results
+# \---
 
 # 
 
-# | Model | Test Accuracy | F1 Weighted | ROC-AUC |
-
-# |---|---|---|---|
-
-# | Decision Tree | 86.21% | 0.8621 | 0.9555 |
-
-# | Random Forest | 82.05% | 0.8205 | 0.9378 |
-
-# | Logistic Regression | 64.10% | 0.6124 | 0.8193 |
+# \## 🤖 Models \& Results
 
 # 
 
-# \## Tuning Methodology
+# | Model | Test Size | Test Accuracy | F1 Weighted | ROC-AUC |
 
-# \- GridSearchCV with Stratified K-Fold (5 splits)
+# |---|---|---|---|---|
 
-# \- Scoring metric: F1 Weighted
+# | Decision Tree | 0.30 | 86.21% | 0.8621 | 0.9555 |
+
+# | Random Forest | 0.15 | 82.05% | 0.8205 | 0.9378 |
+
+# | Logistic Regression | 0.15 | 64.10% | 0.6124 | 0.8193 |
 
 # 
 
-# \## Files
+# > ✅ \*\*Best model: Decision Tree\*\* — highest accuracy and ROC-AUC with no overfitting.
 
-# \- `BOSCH.ipynb` — Full Jupyter Notebook with all code
+# 
 
-# \- `fruit\_classifier\_documentation.pdf` — Project documentation
+# \---
 
-# \- `fruit\_data.xlsx` — Dataset
+# 
+
+# \## 🔧 Tuning Methodology
+
+# 
+
+# \- \*\*GridSearchCV\*\* — exhaustive hyperparameter search
+
+# \- \*\*Stratified K-Fold\*\* (5 splits) — preserves class ratios per fold
+
+# \- \*\*Scoring metric:\*\* F1 Weighted
+
+# 
+
+# \---
+
+# 
+
+# \## 🛠️ Tech Stack
+
+# 
+
+# `Python` · `Jupyter Notebook` · `Scikit-learn` · `Pandas` · `Matplotlib` · `Seaborn`
 
